@@ -22,5 +22,19 @@ namespace SeedData
                 context.SaveChanges();
             }
         }
+
+        public static void SeedQuestions(PriceContext context)
+        {
+            if (!context.Pitanja.Any())
+            {
+                var pitanjaData = System.IO.File.ReadAllText("../SeedData/Data/PitanjaSeedJson.json");
+                var pitanja = JsonConvert.DeserializeObject<List<Pitanje>>(pitanjaData);
+                foreach (var prica in pitanja)
+                {
+                    context.Pitanja.Add(prica);
+                }
+                context.SaveChanges();
+            }
+        }
     }
 }

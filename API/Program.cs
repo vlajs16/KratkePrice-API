@@ -26,6 +26,7 @@ namespace API
                     var context = services.GetRequiredService<PriceContext>();
                     context.Database.Migrate();
                     Seed.SeedPrice(context);
+                    Seed.SeedQuestions(context);
                 }
                 catch (Exception ex)
                 {

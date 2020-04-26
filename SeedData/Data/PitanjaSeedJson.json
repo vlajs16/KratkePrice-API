@@ -1,0 +1,138 @@
+﻿[
+  {
+    "vrednost": "U čiju čast su se organizovale međunarodne automobilske trke 3. septembra 1939. godine?",
+    "odgovori": [
+      {
+        "vrednost": "Kralja Petra I Karađorđevića",
+        "tacan": false
+      },
+      {
+        "vrednost": "Kralja Petra II Karađorđevića",
+        "tacan": true
+      },
+      {
+        "vrednost": "Kralja Aleksandra I Karađorđevića",
+        "tacan": false
+      }
+    ]
+  },
+  {
+    "vrednost": "Koliko krugova je vožena glavna trka pod nazivom Gran Pri, te 1939. godine?",
+    "odgovori": [
+      {
+        "vrednost": "50",
+        "tacan": true
+      },
+      {
+        "vrednost": "49",
+        "tacan": false
+      },
+      {
+        "vrednost": "67",
+        "tacan": false
+      }
+    ]
+  },
+  {
+    "vrednost": "Kako je ime čoveku koji je spasio Savski most od Nemaca 1944. godine?",
+    "odgovori": [
+      {
+        "vrednost": "Milutin Zarić",
+        "tacan": false
+      },
+      {
+        "vrednost": "Miladin Zarkić",
+        "tacan": false
+      },
+      {
+        "vrednost": "Miladin Zarić",
+        "tacan": true
+      }
+    ]
+  },
+  {
+    "vrednost": "U kojoj seriji je ekranizovano delo spasavanja mosta 1944. od strane učitelja?",
+    "odgovori": [
+      {
+        "vrednost": "Povratak otpisanih",
+        "tacan": true
+      },
+      {
+        "vrednost": "Grlom u jagode",
+        "tacan": false
+      },
+      {
+        "vrednost": "Vruć vetar",
+        "tacan": false
+      }
+    ]
+  },
+  {
+    "vrednost": "Krajem kog veka je prostor oko kalemegdanske tvrđave pretvoren u park?",
+    "odgovori": [
+      {
+        "vrednost": "Krajem 17.",
+        "tacan": false
+      },
+      {
+        "vrednost": "Krajem 18.",
+        "tacan": false
+      },
+      {
+        "vrednost": "Krajem 19.",
+        "tacan": true
+      }
+    ]
+  },
+  {
+    "vrednost": "Koja revolucija je bila za dolazak 'beogradskih mongola' u Beograd?",
+    "odgovori": [
+      {
+        "vrednost": "Francuska revolucija",
+        "tacan": false
+      },
+      {
+        "vrednost": "Oktobarska revolucija",
+        "tacan": true
+      },
+      {
+        "vrednost": "Industrijska revolucija",
+        "tacan": false
+      }
+    ]
+  },
+  {
+    "vrednost": "Ko je doneo običaj ispijanja kafe u Beograd?",
+    "odgovori": [
+      {
+        "vrednost": "Nemci",
+        "tacan": false
+      },
+      {
+        "vrednost": "Rimljani",
+        "tacan": false
+      },
+      {
+        "vrednost": "Turci",
+        "tacan": true
+      }
+    ]
+  },
+  {
+    "vrednost": "Gde je otvorena prva kafana u Beogradu?",
+    "odgovori": [
+      {
+        "vrednost": "Kalemegdanu",
+        "tacan": false
+      },
+      {
+        "vrednost": "Dorćolu",
+        "tacan": true
+      },
+      {
+        "vrednost": "Vračaru",
+        "tacan": false
+      }
+    ]
+  }
+]

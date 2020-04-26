@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/pitanja/user/{korisnikId}")]
     [ApiController]
     public class PitanjaController : ControllerBase

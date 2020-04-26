@@ -23,6 +23,7 @@
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
     <ProjectReference Include="..\Helpers\Helpers.csproj" />
     <ProjectReference Include="..\Logics\Logics.csproj" />
+    <ProjectReference Include="..\SeedData\SeedData.csproj" />
   </ItemGroup>
 
 

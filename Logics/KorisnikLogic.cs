@@ -25,6 +25,7 @@ namespace Logics
             {
                 DateTime weekStart, weekEnd;
                 CalculateWeekDays(out weekStart, out weekEnd);
+                
 
                 var korisnici = await _context.Korisnici
                     .Where(x => x.DatumUcesca >= weekStart && x.DatumUcesca <= weekEnd)
@@ -41,7 +42,7 @@ namespace Logics
 
         private void CalculateWeekDays(out DateTime weekStart, out DateTime weekEnd)
         {
-            DateTime baseDate = DateTime.Now;
+            DateTime baseDate = DateTime.Today;
             weekStart = baseDate.AddDays(-(int)baseDate.DayOfWeek);
             weekEnd = weekStart.AddDays(7).AddSeconds(-1);
         }

@@ -46,6 +46,18 @@ namespace API.Controllers
             return Ok(pricaToReturn);
         }
 
+        // GET: api/price/{id}/{next}
+        [HttpGet("{id}/{next}")]
+        public async Task<IActionResult> Get(int id, bool next)
+        {
+            var prica = await _price.Wanted(id,next);
+            if (prica == null)
+                return NotFound("Priča nije pronađena");
+
+            return Ok(prica.PricaID);
+        }
+
+
         // POST: api/Price
         [HttpPost]
         public void Post([FromBody] string value)

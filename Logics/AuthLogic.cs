@@ -22,8 +22,17 @@ namespace Logics
         {
             try
             {
-                var korisnik = await _context.Korisnici
+                Korisnik korisnik = null;
+                if (!string.IsNullOrEmpty(telefon))
+                {
+                    korisnik = await _context.Korisnici
                     .FirstOrDefaultAsync(x => x.Email == email || x.Telefon == telefon || x.KorisnickoIme == korisnickoIme);
+                }
+                else
+                {
+                    korisnik = await _context.Korisnici
+                    .FirstOrDefaultAsync(x => x.Email == email || x.KorisnickoIme == korisnickoIme);
+                }
                 if (korisnik == null)
                     return false;
                 return true;

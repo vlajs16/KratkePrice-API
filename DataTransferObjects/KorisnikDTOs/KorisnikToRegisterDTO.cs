@@ -13,7 +13,6 @@ namespace DataTransferObjects.KorisnikDTOs
         public string KorisnickoIme { get; set; }
         [Required]
         public string Email { get; set; }
-        [Required]
         public string Telefon { get; set; }
     }
 }

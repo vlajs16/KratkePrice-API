@@ -10,5 +10,6 @@ namespace Logics.Interfaces
     {
         Task<List<Prica>> GetObjects();
         Task<Prica> GetById(int id);
+        Task<Prica> Wanted(int id, bool next);
     }
 }

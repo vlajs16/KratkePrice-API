@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,6 +30,23 @@ namespace Logics
             catch (Exception ex)
             {
                 Debug.WriteLine(">>>>>> " + ex.Message);
+                return null;
+            }
+        }
+
+        public async Task<List<Pitanje>> GetPitanjaWithTrueAnswer()
+        {
+            try
+            {
+                var answ = await _context.Pitanja
+                    .Include(x => x.Odgovori)
+                    .ToListAsync();
+                var toReturn = answ.ConvertToOdg();
+                return toReturn;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(">>>>>>> " + ex.Message);
                 return null;
             }
         }

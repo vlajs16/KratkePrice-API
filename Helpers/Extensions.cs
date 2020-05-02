@@ -31,5 +31,39 @@ namespace Helpers
             odgovori.Add(odgovor);
             return odgovori;
         }
+
+        public static Odgovor ConvertToOdgovor(this List<Odgovor> odgovori)
+        {
+            return odgovori[0];
+        }
+
+        public static List<Pitanje> ConvertToOdg(this List<Pitanje> pitanja)
+        {
+            List<Pitanje> nova = new List<Pitanje>();
+            foreach (var pitanje in pitanja)
+            {
+                foreach (var odgovor in pitanje.Odgovori)
+                {
+                    if (odgovor.Tacan)
+                    {
+                        nova.Add(new Pitanje
+                        {
+                            PitanjeID = pitanje.PitanjeID,
+                            Vrednost = pitanje.Vrednost,
+                            Odgovori = new List<Odgovor>
+                            {
+                                new Odgovor
+                                {
+                                    OdgovorID = odgovor.OdgovorID,
+                                    Vrednost = odgovor.Vrednost,
+                                    Tacan = odgovor.Tacan
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+            return nova;
+        }
     }
 }

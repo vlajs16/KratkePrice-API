@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using DataTransferObjects.PitanjeDTOs;
+using DataTransferObjects.ResponseDTOs;
 using Domain;
 using Logics.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -54,9 +55,43 @@ namespace API.Controllers
 
             var poeni = await _logic.SavePoints(pitanjaZaProveru, korisnikId);
             if (poeni == -500)
-                return BadRequest("Greska!");
+                return BadRequest("Greska, ne može se izračunati broj poena!");
 
-            return Ok(poeni);
+            var odgovoriNaPitanja = await _logic.GetPitanjaWithTrueAnswer();
+            if (odgovoriNaPitanja == null)
+                return BadRequest("Greska, ne možemo učitati pitanja");
+
+            var pitanjaZaVracanje = _mapper.Map<List<PitanjeToReturnDTO>>(odgovoriNaPitanja);
+
+            ResponseAnswersDTO toReturn = new ResponseAnswersDTO
+            {
+                Pitanja = pitanjaZaVracanje,
+                Poeni = poeni
+            };
+
+            return Ok(toReturn);
+
+        }
+
+
+        // Get: api/pitanja/saodg
+        [HttpGet("saodg")]
+        public async Task<IActionResult> GetPitanja()
+        {
+
+            var odgovoriNaPitanja = await _logic.GetPitanjaWithTrueAnswer();
+            if (odgovoriNaPitanja == null)
+                return BadRequest("Greska, ne možemo učitati pitanja");
+
+            var pitanjaZaVracanje = _mapper.Map<List<PitanjeToReturnDTO>>(odgovoriNaPitanja);
+
+            ResponseAnswersDTO toReturn = new ResponseAnswersDTO
+            {
+                Pitanja = pitanjaZaVracanje,
+                Poeni = 10
+            };
+
+            return Ok(toReturn);
 
         }
     }

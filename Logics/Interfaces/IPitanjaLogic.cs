@@ -10,5 +10,6 @@ namespace Logics.Interfaces
     {
         Task<List<Pitanje>> GetObjects();
         Task<double> SavePoints(List<Pitanje> pitanja, int korisnikID);
+        Task<List<Pitanje>> GetPitanjaWithTrueAnswer();
     }
 }

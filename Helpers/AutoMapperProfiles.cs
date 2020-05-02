@@ -22,6 +22,9 @@ namespace Helpers
                 opt => opt.MapFrom(p => p.Odgovor.ConvertToList()));
             CreateMap<KorisnikToRegisterDTO, Korisnik>();
             CreateMap<Korisnik, KorisnikForResultDTO>();
+            CreateMap<Pitanje, PitanjeToReturnDTO>()
+                .ForMember(dest => dest.Odgovor,
+                opt => opt.MapFrom(p => p.Odgovori.ConvertToOdgovor()));
         }
     }
 }

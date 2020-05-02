@@ -28,8 +28,8 @@ namespace Logics
                 
 
                 var korisnici = await _context.Korisnici
-                    .Where(x => x.DatumUcesca >= weekStart && x.DatumUcesca <= weekEnd)
-                    .Take(5).OrderByDescending(x => x.Poeni).ToListAsync();
+                    .Where(x => x.DatumUcesca >= weekStart && x.DatumUcesca <= weekEnd).OrderByDescending(x => x.Poeni)
+                    .Take(5).ToListAsync();
 
                 return korisnici;
             }
